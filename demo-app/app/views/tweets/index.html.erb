@@ -11,6 +11,8 @@
     <tr>
       <td><%= link_to tweet.status, tweet %></td>
       <td><%= link_to tweet.zombie.name, tweet.zombie %></td>
+      <td><%= link_to "Edit", edit_tweet_path(tweet) %></td>
+      <td><%= link_to "Destroy", tweet, method: :delete %></td>
     </tr>
   <% end %>
 
