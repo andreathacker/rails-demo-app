@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head><title>RailsForZombies</title></head>
+  <body>
+    <header>...</header>
+
+    <% tweet = Tweet.find(1) %>
+    <h1><%= tweet.status %></h1>
+    <p>Posted by <% tweet.zombie.name %></p>
+
+  </body>
+</html>
+  
