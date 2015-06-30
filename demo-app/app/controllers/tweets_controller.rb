@@ -36,9 +36,30 @@ class TweetsController < AppicationController
   end
 
   def edit
+    # no longer needed due to before action methods defined
+    # @tweet = Tweet.find(params[:id])
+  end
+
+  # These keywords specify methods to call before the logic of methods
+  # edit, update, or destory is executed. If the only: keyword isn't included
+  # then these before_actions will apply to all methods. 
+  before_action :get_tweet, only: [:edit, :update, :destroy]
+  before_action :check_auth, only: [:edit, :update, :destroy]
+
+  def get_tweet
     @tweet = Tweet.find(params[:id])
   end
 
+  def check_auth
+    # Check to see if the user information stored in the
+    # session hash is equal to the current user id
+    # NOTE: this has not been implemented yet and this value
+    # will need to be implemented on our own
+    if session[:zombie_id] != @tweet.zombie_id
+      flash[:notice] = "Sorry, you can't edit this tweet"
+      redirect_to(tweets_path)
+    end
+  end
 
   # A list of standard controller methods are listed below
 
