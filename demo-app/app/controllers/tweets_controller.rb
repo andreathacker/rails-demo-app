@@ -1,7 +1,7 @@
 class TweetsController < AppicationController
 
-    # This method maps to the show.html.erb file contained
-    # in the views/tweets/ folder
+  # This method maps to the show.html.erb file contained
+  # in the views/tweets/ folder
   def show
 
     # Create a tweet from a hash
@@ -60,6 +60,7 @@ class TweetsController < AppicationController
       redirect_to(tweets_path)
     end
   end
+
 
   # A list of standard controller methods are listed below
 
