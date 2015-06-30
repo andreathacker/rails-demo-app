@@ -25,6 +25,29 @@ class TweetsController < AppicationController
     # below to specify the name of a different file in
     # the same path -
     # render action: 'status'
+
+    respond_to do |format|
+      # show.html.erb
+      format.html
+      # Render the json object for this tweet
+      format.json { render json: @tweet}
+      # Render the xml
+      format.xml {render xml: @tweet}
   end
+
+  def edit
+    @tweet = Tweet.find(params[:id])
+  end
+
+
+  # A list of standard controller methods are listed below
+
+  # def index -> List all tweets
+  # def show -> Show a single tweet
+  # def new -> Show a new tweet format
+  # def edit -> Show an edit tweet form
+  # def create -> Create a new tweet
+  # def upate -> Update a tweet
+  # def destroy -> Delete a tweet
 
 end
