@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
   # START MY CODE
-  resources :tweets
+  get 'tweets/index'
+
+  root 'tweets#index'
+
+  #resources :tweets
 
   # Define a Custom Route
   # path = /new_tweet
@@ -9,7 +13,7 @@ Rails.application.routes.draw do
   # action = new
   # get '/new_tweet' => 'tweets#new'
 
-  root 'tweets#show'
+  #root 'tweets#show'
 
   # END MY CODE
 
