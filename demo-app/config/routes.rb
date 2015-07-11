@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+
+  # START MY CODE
+  resources :tweets
+
+  # Define a Custom Route
+  # path = /new_tweet
+  # controller = tweets
+  # action = new
+  # get '/new_tweet' => 'tweets#new'
+
+  root 'tweets#show'
+
+  # END MY CODE
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

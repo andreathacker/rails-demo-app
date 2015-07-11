@@ -1,4 +1,15 @@
-class TweetsController < AppicationController
+class TweetsController < ApplicationController
+
+  # A list of standard controller methods are listed below
+
+  # def index -> List all tweets
+  # def show -> Show a single tweet
+  # def new -> Show a new tweet format
+  # def edit -> Show an edit tweet form
+  # def create -> Create a new tweet
+  # def upate -> Update a tweet
+  # def destroy -> Delete a tweet
+
 
   # This method maps to the show.html.erb file contained
   # in the views/tweets/ folder
@@ -33,6 +44,7 @@ class TweetsController < AppicationController
       format.json { render json: @tweet}
       # Render the xml
       format.xml {render xml: @tweet}
+    end
   end
 
   def edit
@@ -42,7 +54,7 @@ class TweetsController < AppicationController
 
   # These keywords specify methods to call before the logic of methods
   # edit, update, or destory is executed. If the only: keyword isn't included
-  # then these before_actions will apply to all methods. 
+  # then these before_actions will apply to all methods.
   before_action :get_tweet, only: [:edit, :update, :destroy]
   before_action :check_auth, only: [:edit, :update, :destroy]
 
@@ -61,15 +73,7 @@ class TweetsController < AppicationController
     end
   end
 
-
-  # A list of standard controller methods are listed below
-
-  # def index -> List all tweets
-  # def show -> Show a single tweet
-  # def new -> Show a new tweet format
-  # def edit -> Show an edit tweet form
-  # def create -> Create a new tweet
-  # def upate -> Update a tweet
-  # def destroy -> Delete a tweet
+  #def new
+  #end
 
 end
