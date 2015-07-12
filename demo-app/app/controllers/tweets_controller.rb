@@ -10,6 +10,11 @@ class TweetsController < ApplicationController
   # def upate -> Update a tweet
   # def destroy -> Delete a tweet
 
+  def index
+  end
+
+  def create
+  end
 
   # This method maps to the show.html.erb file contained
   # in the views/tweets/ folder
@@ -72,8 +77,5 @@ class TweetsController < ApplicationController
       redirect_to(tweets_path)
     end
   end
-
-  #def new
-  #end
 
 end
