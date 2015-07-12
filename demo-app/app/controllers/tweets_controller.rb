@@ -16,6 +16,9 @@ class TweetsController < ApplicationController
   def create
   end
 
+  def new
+  end
+
   # This method maps to the show.html.erb file contained
   # in the views/tweets/ folder
   def show

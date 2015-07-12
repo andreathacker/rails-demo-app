@@ -1,19 +1,18 @@
 Rails.application.routes.draw do
 
   # START MY CODE
-  get 'tweets/index'
-
-  root 'tweets#index'
-
   resources :tweets
+
+  get 'tweets/index'
 
   # Define a Custom Route
   # path = /new_tweet
   # controller = tweets
   # action = new
-  # get '/new_tweet' => 'tweets#new'
+  get '/new_tweet' => 'tweets#new'
 
   #root 'tweets#show'
+  root 'tweets#index'
 
   # END MY CODE
 
