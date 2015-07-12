@@ -11,8 +11,15 @@ Rails.application.routes.draw do
   # action = new
   get '/new_tweet' => 'tweets#new'
 
+  # this is a custom url generator so that when we want to
+  # link to all tweets we have a path that we can use to get there (all_tweets)
+  get '/all' => 'tweets#index', as: 'all_tweets'
+
+  # An example of a basic redirect route
+  get '/all' => redirect('/tweets')
+
   #root 'tweets#show'
-  root 'tweets#index'
+  root to: 'tweets#index'
 
   # END MY CODE
 
