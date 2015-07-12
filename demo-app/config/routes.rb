@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   root 'tweets#index'
 
-  #resources :tweets
+  resources :tweets
 
   # Define a Custom Route
   # path = /new_tweet
